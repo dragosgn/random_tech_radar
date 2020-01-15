@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <svg id="radar"></svg>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="http://zalando.github.io/tech-radar/release/radar-0.5.js"></script>
+    <script>
+      radar_visualization({
+        svg_id: "radar",
+        width: 1450,
+        height: 1000,
+        colors: {
+          background: "#fff",
+          grid: "#bbb",
+          inactive: "#ddd"
+        },
+        title: "My Random Radar ",
+        quadrants: [
+          { name: "Awesome" },
+          { name: "Nitty" },
+          { name: "Gritty" },
+          { name: "Naughty" }
+        ],
+        rings: [
+          { name: "Ice Cream", color: "#93c47d" },
+          { name: "Brownie", color: "#b7e1cd" },
+          { name: "Apple Pie", color: "#fce8b2" },
+          { name: "Chocolate", color: "#f4c7c3" }
+        ],
+        print_layout: true,
+        entries: [
+          {
+            label: "Super awesome new cookies",
+            quadrant: 3, // 0,1,2,3 (counting clockwise, starting from bottom right)
+            ring: 2, // 0,1,2,3 (starting from inside)
+            moved: -1 // -1 = moved out (triangle pointing down)
+            //  0 = not moved (circle)
+            //  1 = moved in  (triangle pointing up)
+          }
+          // ...
+        ]
+      });
+    </script>
+  </body>
+</html>
